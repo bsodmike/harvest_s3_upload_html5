@@ -14,13 +14,16 @@
   <%= yield(:head) %>
 </head>
 <body>
+<div id="container">
+  <div id="user_nav" style="text-align:right;">
+  </div>
+    
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+  <% end %>
 
-<% flash.each do |name, msg| %>
-  <%= content_tag :div, msg, :id => "flash_#{name}" %>
-<% end %>
-
-<%= yield %>
-
+  <%= yield %>
+</div>
 <%= "Application Time: #{Time.now.strftime("%D @ %H%M %z")}" if Rails.env.development? %>
 <%= debug(params) if Rails.env.development? %>
 <%= debug(session) if Rails.env.development? %>

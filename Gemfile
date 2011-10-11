@@ -17,10 +17,12 @@ gem 'vidibus-routing_error'
 gem 'kaminari'
 gem 'rspec-rails', :group => [:development, :test]
 gem 'pry', :group => [:development, :test]
+gem 'aws-s3', :require => 'aws/s3'
+gem 'paperclip'
 
-group :production do
-  gem 'mysql2', '< 0.3'
-end
+# group :production do
+#   gem 'mysql2', '< 0.3'
+# end
 
 group :development do
   # do bundle install --without production

@@ -1,6 +1,6 @@
 CoreApp::Application.routes.draw do
-  get "public/index"
 
   root :to => 'public#index'
+  resources :s3_uploads, :only => [:create]
 
 end
